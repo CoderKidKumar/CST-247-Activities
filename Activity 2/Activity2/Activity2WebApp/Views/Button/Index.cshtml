@@ -1,0 +1,15 @@
+﻿@model List<Activity2WebApp.Models.ButtonModel>
+
+<h1 class="text-center">Welecome To Razor</h1>
+<h3>Play With Buttons</h3>
+@using (Html.BeginForm("OnButtonClick", "ButtonContoller", FormMethod.Post)) {
+    <button type="submit" name="mine" value="1">
+        @if (Model[0].CurrentState == false) { <img src ="~/Img/on.png"/> } 
+        else {<img src="~/Img/off.png" />}
+    </button><br/>
+    <button type="submit" name="mine" value="1">
+        @if (Model[1].CurrentState == true) {<img src="~/Img/on.png" /> }
+        else {<img src="~/Img/off.png" />}
+
+</button>
+}
