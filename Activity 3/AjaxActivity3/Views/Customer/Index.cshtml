@@ -1,0 +1,25 @@
+﻿@model IEnumerable<AjaxActivity3.Models.CustomerModel>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h5>Current Time is @DateTime.Now </h5>
+            <form asp-action="ShowCustomer" asp-controller="Customer">
+                <ul style="list-style-type: none;">
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <input type="radio" name="ID" value=@item.ID />
+                            <label>@item.Name</label>
+                        </li>
+                    }
+                </ul>
+                <input type="submit" id="submitCustomer" />
+            </form>
+        </div>
+        <div class="col-6" id="customerInfoArea">
+            <div class="container bg-dark text-white">
+                <h4>Customer Information Here</h4>
+            </div>
+        </div>
+    </div>
+</div>
